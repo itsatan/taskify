@@ -52,7 +52,19 @@ export const Sidebar = ({
     }
 
     if (!iseLoadedOrg || !isLoadedOrgList || userMemberships.isLoading) {
-        return <Skeleton />
+        return (
+            <>
+                <div className="flex items-center justify-between mb-2">
+                    <Skeleton className="w-[50%] h-10 " />
+                    <Skeleton className="w-10 h-10" />
+                </div>
+                <div className="space-y-2">
+                    <NavItem.Skeleton />
+                    <NavItem.Skeleton />
+                    <NavItem.Skeleton />
+                </div>
+            </>
+        )
     }
 
     return (
