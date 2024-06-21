@@ -28,19 +28,19 @@ export const FormPicker = ({
     useEffect(() => {
         const fetchImages = async () => {
             try {
-                throw new Error('use default images')
-                // const result = await unsplash.photos.getRandom({
-                //     collectionIds: ['317099'],
-                //     count: 9,
-                // })
+                // throw new Error('use default images')
+                const result = await unsplash.photos.getRandom({
+                    collectionIds: ['317099'],
+                    count: 9,
+                })
 
-                // if (result && result.response) {
-                //     const newImages = (result.response as Array<Record<string, any>>)
-                //     console.log(newImages, 'newImages');
-                //     setImages(newImages)
-                // } else {
-                //     console.log('Failed to get images form Unsplash');
-                // }
+                if (result && result.response) {
+                    const newImages = (result.response as Array<Record<string, any>>)
+                    console.log(newImages, 'newImages');
+                    setImages(newImages)
+                } else {
+                    console.log('Failed to get images form Unsplash');
+                }
             } catch (error) {
                 console.log('Error fetching images', error);
                 setImages(defaultImages)
