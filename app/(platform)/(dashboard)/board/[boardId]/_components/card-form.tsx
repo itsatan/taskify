@@ -58,6 +58,7 @@ export const CardForm = forwardRef<HTMLTextAreaElement, CardFromProps>(({
         const title = formData.get('title') as string
         const listId = formData.get('listId') as string
         const boardId = params.boardId as string
+        console.log({ title, listId, boardId });
         execute({ title, listId, boardId })
     }
 

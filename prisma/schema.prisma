@@ -54,5 +54,8 @@ model Card {
     listId String
     list   List   @relation(fields: [listId], references: [id], onDelete: Cascade)
 
+    createAt DateTime @default(now())
+    updateAt DateTime @updatedAt
+
     @@index([listId])
 }
